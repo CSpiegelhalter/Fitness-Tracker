@@ -12,6 +12,9 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
+require("./controllers/html-routes.js")(app);
+require("./controllers/api-routes.js")(app);
+
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workoutdb", { useNewUrlParser: true });
 
 app.post("/submit", ({body}, res) => {
