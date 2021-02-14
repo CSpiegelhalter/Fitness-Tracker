@@ -6,7 +6,7 @@ const WorkoutSchema = new Schema({
   // CODE HERE
   day: {
     type: Date,
-    default: new Date
+    default: Date.now
   },
   exercises: {
     name: {
@@ -30,7 +30,8 @@ const WorkoutSchema = new Schema({
       type: Number
     },
     duration: {
-        type: Number
+        type: Number,
+        require: "Duration is required!"
     },
     distance: {
         type: Number
