@@ -3,24 +3,26 @@ const API = {
     let res;
     try {
       res = await fetch("/api/workouts")
+
     } catch (err) {
       console.log(err)
     }
     const json = await res.json();
-    console.log(json);
 
     return json[json.length - 1];
   },
   async addExercise(data) {
     const id = location.search.split("=")[1];
+    console.log("Where ya going???");
 
     const res = await fetch("/api/workouts/" + id, {
-      method: "PUT",
+      method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data)
     });
-
+    console.log(res + " the resres");
     const json = await res.json();
+    console.log(json + " the jsonjsonjson");
 
     return json;
   },
