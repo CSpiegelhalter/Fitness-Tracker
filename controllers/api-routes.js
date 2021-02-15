@@ -50,7 +50,7 @@ module.exports = (app) => {
 
     
 
-    app.post("/api/workouts/:id", (req, res) => {
+    app.put("/api/workouts/:id", (req, res) => {
         Workout.updateOne({_id: mongoose.Types.ObjectId(req.params.id)}, {$push: {exercises: req.body}}, (err, result) => {
             if (err) throw err;
             res.json("Updated successfully!");

@@ -13,16 +13,14 @@ const API = {
   },
   async addExercise(data) {
     const id = location.search.split("=")[1];
-    console.log("Where ya going???");
 
     const res = await fetch("/api/workouts/" + id, {
-      method: "POST",
+      method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data)
     });
-    console.log(res + " the resres");
+
     const json = await res.json();
-    console.log(json + " the jsonjsonjson");
 
     return json;
   },
