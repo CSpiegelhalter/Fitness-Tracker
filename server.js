@@ -18,7 +18,7 @@ app.use(express.static("public"));
 require("./controllers/html-routes.js")(app);
 require("./controllers/api-routes.js")(app);
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/ancient-journey-14742");
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
